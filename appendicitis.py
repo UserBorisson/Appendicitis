@@ -3,6 +3,7 @@ import time
 import threading
 from playsound import playsound
 from tabulate import tabulate
+import json
 
 #
 RED = "\033[31m"
@@ -214,36 +215,14 @@ def perform_exams(performed_exams):
     if choice in available_exams:
         performed_exams.add(choice)
 
-        if choice == "1":
-            response = "\nAirway is patent without obstruction or stridor."
-        elif choice == "2":
-            response = "\nBilateral, symmetric breath sounds with normal chest rise."
-        elif choice == "3":
-            response = "\n2+ peripheral pulses, normal capillary refill."
-        elif choice == "4":
-            response = "\nNormocephalic, atraumatic, PERRL, EOMI, oropharynx is clear, no scleral icterus. Mucous membranes dry."
-        elif choice == "5":
-            response = "\nNo masses, trachea midline, supple with full range of motion without C-spine tenderness."
-        elif choice == "6":
-            response = "\nTachycardic, regular rhythm, no murmurs, rubs or gallops."
-        elif choice == "7":
-            response = "\nClear to auscultation bilaterally, no retractions, no wheezes, rhonchi or rales."
-        elif choice == "8":
-            response = "\nSoft, RLQ tenderness with mild guarding, no rebound. Right-sided pain with palpation of the LLQ with bowel sounds.\nSuspicion of appendicitis."
-        elif choice == "9":
-            response = "\nNo CVAT bilaterally. Normal penis and testicles; no tenderness or masses."
-        elif choice == "10":
-            response = "\nNo CVA tenderness, no tenderness to the thoracic or lumbar spine."
-        elif choice == "11":
-            response = "\nNo clubbing, cyanosis or edema. Normal range of motion without bony point tenderness."
-        elif choice == "12":
-            response = "\nWarm and dry, no rashes."
-        elif choice == "13":
-            response = "\nAwake and alert, speech clear. CN 2-12 intact, normal bulk, tone and strength in all extremities. No drift or dysmetria."
-        elif choice == "14":
-            response = "\nNormal mood and affect with intact attention and calculation."
+        response = ""
+
+        with open('responses.json', 'r') as file:
+            data = json.load(file)
+            response = list(data.values())[0][int(choice)-1]
 
         typewriter_effect(response)
+
     else:
         typewriter_effect("\nPlease choose a valid exam.")
         return perform_exams(performed_exams)
@@ -277,9 +256,61 @@ def format_result(value, normal_range=None, unit=""):
 
 
 def new_labs():
-    lab_results = {
-        {"index", "name", "results"} : {1, "Alex", [("pH", pH, normal_pH, ""), ("pCO2", pCO2[0], normal_pCO2, pCO2[1]), ("pO2", pO2[0], normal_pO2, pO2[1])]},
-    }
+        # name : results
+        lab_results = [
+            { "Arterial Blood Gas" : [("pH", pH, normal_pH, ""), ("pCO2", pCO2[0], normal_pCO2, pCO2[1]), ("pO2", pO2[0], normal_pO2, pO2[1])]},
+            { "Chem 7" : [("Sodium", Sodium[0], normal_Sodium, Sodium[1]), ("Potassium", Potassium[0], normal_Potassium, Potassium[1]), ("Chloride", Chloride[0], normal_Chloride, Chloride[1]), ("Bicarbonate", Bicarbonate[0], normal_Bicarbonate, Bicarbonate[1]), ("Glucose", Glucose[0], normal_Glucose, Glucose[1]), ("Creatinine", Creatinine[0], normal_Creatinine, Creatinine[1]), ("BUN", BUN[0], normal_BUN, BUN[1])]},
+            { "Blood Type" : [("", Blood_Type, None, "")]},
+            { "Ionized Calcium" : [("", Calcium_Ionized[0], normal_Calcium_Ionized, Calcium_Ionized[1])]},
+            { "Calcium" : [("", Calcium_Level[0], normal_Calcium_Level, Calcium_Level[1])]},
+            { "Coagulation Panel" : [("INR", INR, normal_INR, ""), ("PT", PT[0], normal_PT, PT[1]), ("PTT", PTT[0], normal_PTT, PTT[1])]},
+            { "CBC" : [("WBC", WBC[0], normal_WBC, WBC[1]), ("Hgb", Hgb[0], normal_Hgb, Hgb[1]), ("Hct", Hct, normal_Hct, ""), ("Platelets", Platelets[0], normal_Platelets, Platelets[1])]},
+            { "D-Dimer" : [("", DDimer[0], normal_DDimer, DDimer[1])]},
+            { "Lactate" : [("", Lactate[0], normal_Lactate, Lactate[1])]},
+            { "Lipase" : [("", Lipase[0], normal_Lipase, Lipase[1])]},
+            { "LFTs" : [("ALP", ALP[0], normal_ALP, ALP[1]), ("ALT", ALT[0], normal_ALT, ALT[1]), ("AST", AST[0], normal_AST, AST[1]), ("Bilirubin I", Bilirubin_I[0], normal_Bilirubin_I, Bilirubin_I[1]), ("Bilirubin D", Bilirubin_D[0], normal_Bilirubin_D, Bilirubin_D[1])]},
+            { "Magnesium": [("", Magnesium_Level[0], normal_Magnesium_Level, Magnesium_Level[1])]},
+            { "Phosphate": [("", Phosphate[0], normal_Phosphate, Phosphate[1])]},
+            { "pro-BNP": [("", BNP[0], normal_BNP, BNP[1])]},
+            { "Troponin-T": [("", Troponin_T[0], None, Troponin_T[1])]},
+            { "Urinalysis": []},
+            { "Acetaminophen": [("", Acetaminophen[0], normal_Acetaminophen, Acetaminophen[1])]},
+            { "Amylase": [("", Amylase[0], normal_Amylase, Amylase[1])]},
+            { "Blood Culture (x2)": []},
+            { "CRP": [("", CRP[0], normal_CRP, CRP[1])]},
+            { "CK": [("", CK[0], normal_CK, CK[1])]},
+            { "CSF Cell Count": []},
+            { "CSF Glucose": []},
+            { "CSF Gram Stain": []},
+            { "CSF Protein": []},
+            { "EtOH": [("", EtOH_Level[0], normal_EtOH_Level, EtOH_Level[1])]},
+            { "LDH": [("", LDH[0], normal_LDH, LDH[1])]},
+            { "Osmolality": [("", Osmolality[0], normal_Osmolality, Osmolality[1])]},
+            { "Peripheral Smear": []},
+            { "Salicylate": [("", Salicylate_Level[0], normal_Salicylate_Level, Salicylate_Level[1])]},
+            { "TSH": [("", TSH[0], normal_TSH, TSH[1])]},
+            { "Uric Acid": [("", Uric_Acid[0], normal_Uric_Acid, Uric_Acid[1])]},
+            { "Urine  Cul`ture": []},
+            { "Urine  Tox Screen": []},
+            { "COVID-19 Test": []},
+            { "ESR": [("", ESR[0], normal_ESR, ESR[1])]},
+            { "CT Abdomen":  []},
+            { "CT Aorta": []},
+            { "CT C-Spine": []},
+            { "CT Thorax": []},
+            { "CT Head": []},
+            { "CT Pulmonary Embolus": []},
+            { "CT/CTA Head & Neck": []},
+            { "MRI Abdomen": []},
+            { "MRI C-Spine": []},
+            { "MRI T-Spine": []},
+            { "MRI L-Spine": []},
+            { "MRI/MRA  Head & Neck": []},
+            { "XR Thorax": []},
+            { "XR Pelvis": []},
+        ]
+        return lab_results
+    
 
 def perform_labs(performed_labs):
     lab_results = {
@@ -335,18 +366,17 @@ def perform_labs(performed_labs):
         "50": {"name": "XR Pelvis", "results": []},
     }
 
-    available_labs = {key: value for key, value in lab_results.items() if key not in performed_labs}
+    new_lab = new_labs()
+    
+    available_labs = {str(new_lab.index(pair)) for pair in new_lab if str(new_lab.index(pair)) not in performed_labs}
 
     print("\nChoose labs to run (enter numbers separated by commas):")
-    index = 0
-    for i in range((int((available_labs.__len__() - 5) / 5) + 1)):
-        item = list(available_labs.items())[index]
-        item1 = list(available_labs.items())[index+1]
-        item2 = list(available_labs.items())[index+2]
-        item3 = list(available_labs.items())[index+3]
-        item4 = list(available_labs.items())[index+4]
-        print(f"{item[0]}. {list(item[1].items())[0][1]}     {item1[0]}. {list(item1[1].items())[0][1]}     {item2[0]}. {list(item2[1].items())[0][1]}     {item3[0]}. {list(item3[1].items())[0][1]}          {item4[0]}. {list(item4[1].items())[0][1]}")
-        index+=5
+
+    window_size = 0
+    for i in range((int((new_lab.__len__() - 5) / 5) + 1)):
+        items = [new_lab[window_size+index] for index in range(5)]
+        print(f"{window_size+1}. {list(items[0].keys())[0]}     {window_size+2}. {list(items[1].keys())[0]}     {window_size+3}. {list(items[2].keys())[0]}     {window_size+4}. {list(items[3].keys())[0]}       {window_size+5}. {list(items[4].keys())[0]}")
+        window_size+=5
 
     choice = input("\nEnter the numbers of the labs you want to perform (comma-separated): ")
 
@@ -354,7 +384,7 @@ def perform_labs(performed_labs):
         typewriter_effect("\nYou have decided to end the interaction and proceed with the case.")
         return True
 
-    selected_labs = choice.split(",")
+    selected_labs = choice.split(", ")
 
     response = ""
 
@@ -362,7 +392,7 @@ def perform_labs(performed_labs):
     for lab_number in selected_labs:
         lab_number = lab_number.strip()
         if lab_number in available_labs:
-            performed_labs.add(lab_number)
+            performed_labs.add(str(new_lab[int(lab_number)]))
             lab_info = lab_results[lab_number]
             for result in lab_info["results"]:
                 name = result[0] if len(result) > 0 else ""
@@ -488,7 +518,7 @@ outro_text = (
 )
 
 #
-interactive_labs()
+interactive_exams()
 play_sound_with_text(intro_path, intro_text)
 time.sleep(1)
 play_sound_with_text(history_path,history_text)
