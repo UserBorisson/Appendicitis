@@ -276,6 +276,11 @@ def format_result(value, normal_range=None, unit=""):
         return f"{value} {unit}"
 
 
+def new_labs():
+    lab_results = {
+        {"index", "name", "results"} : {1, "Alex", [("pH", pH, normal_pH, ""), ("pCO2", pCO2[0], normal_pCO2, pCO2[1]), ("pO2", pO2[0], normal_pO2, pO2[1])]},
+    }
+
 def perform_labs(performed_labs):
     lab_results = {
         "1": {"name": "Arterial Blood Gas", "results": [("pH", pH, normal_pH, ""), ("pCO2", pCO2[0], normal_pCO2, pCO2[1]), ("pO2", pO2[0], normal_pO2, pO2[1])]},
@@ -333,9 +338,16 @@ def perform_labs(performed_labs):
     available_labs = {key: value for key, value in lab_results.items() if key not in performed_labs}
 
     print("\nChoose labs to run (enter numbers separated by commas):")
-    for key, value in available_labs.items():
-        print(f"{key}. {value['name']}")
-    
+    index = 0
+    for i in range((int((available_labs.__len__() - 5) / 5) + 1)):
+        item = list(available_labs.items())[index]
+        item1 = list(available_labs.items())[index+1]
+        item2 = list(available_labs.items())[index+2]
+        item3 = list(available_labs.items())[index+3]
+        item4 = list(available_labs.items())[index+4]
+        print(f"{item[0]}. {list(item[1].items())[0][1]}     {item1[0]}. {list(item1[1].items())[0][1]}     {item2[0]}. {list(item2[1].items())[0][1]}     {item3[0]}. {list(item3[1].items())[0][1]}          {item4[0]}. {list(item4[1].items())[0][1]}")
+        index+=5
+
     choice = input("\nEnter the numbers of the labs you want to perform (comma-separated): ")
 
     if choice == "0":
@@ -476,6 +488,7 @@ outro_text = (
 )
 
 #
+interactive_labs()
 play_sound_with_text(intro_path, intro_text)
 time.sleep(1)
 play_sound_with_text(history_path,history_text)
@@ -494,8 +507,8 @@ time.sleep(1)
 play_sound_with_text(hint_vasculature_path,hint_vasculature_text)
 time.sleep(1)
 play_sound_with_text(lab_path,lab_text)
-time.sleep(1)
 interactive_labs()
+time.sleep(1)
 play_sound_with_text(hint_atb_path,hint_atb_text)
 time.sleep(1)
 play_sound_with_text(resolution_path,resolution_text)
