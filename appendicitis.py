@@ -476,6 +476,7 @@ outro_text = (
 )
 
 #
+print("1")
 interactive_labs()
 play_sound_with_text(intro_path, intro_text)
 time.sleep(1)
