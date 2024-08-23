@@ -391,14 +391,14 @@ excellent_text = (
     "\nExcellent!"
 )
 
-intro_path = "D:/Python/Appendicitis/intro.mp3"
+intro_path = "intro.mp3"
 intro_text = (
     "\nDC is a 29 year old man presenting to the emergency room with abdominal pain and nausea, no fever."
     "\nHe says the pain had started yesterday out of nowhere and has been getting worse ever since to"
     "\nthe point where it is unbearable."
 )
 
-history_path = "D:/Python/Appendicitis/history.mp3"
+history_path = "history.mp3"
 history_text = (
     "\nWhen taking the patient's history, focus on the progression of symptoms, associated factors like" 
     "\nfever or nausea, and any specific triggers or alleviating factors. During the discussion of "
@@ -406,7 +406,7 @@ history_text = (
     "\nand any other relevant systemic complaints."
 )
 
-differential_path = "D:/Python/Appendicitis/differential.mp3"
+differential_path = "differential.mp3"
 differential_text = (
     "\nThe patient presents with abdominal pain, poor appetite, nausea and chills."
     "\nThe absence of fever, vomiting, diarrhoea, dysuria and recent travel history" 
@@ -416,7 +416,7 @@ differential_text = (
     "\nto be considered based on the patient's symptoms and examination findings."
 )
 
-physical_path = "D:/Python/Appendicitis/physical.mp3"
+physical_path = "physical.mp3"
 physical_text = (
     "\nDuring the physical examination, focus on eliciting right lower quadrant tenderness,"
     "\nspecifically at McBurney's point, located between the anterior superior iliac spine" 
@@ -424,25 +424,25 @@ physical_text = (
     "\nand obturator sign, which can indicate peritoneal irritation and help in the diagnosis."
 )
 
-hint_physical_path = "D:/Python/Appendicitis/hint_physical.mp3"
+hint_physical_path = "hint_physical.mp3"
 hint_physical_text = (
     "\nRemember to thoroughly asses the abdomen for any signs of discomfort or sensitivity," 
     "\nas this can provide valuable information about the patient's condition."
 )
 
-hint_monitoring_path = "D:/Python/Appendicitis/hint_monitoring.mp3"
+hint_monitoring_path = "hint_monitoring.mp3"
 hint_monitoring_text = (
     "\nMake sure to connect the patient to the necessary equipment to continuously monitor vital signs," 
     "\nas this will provide valuable information for ongoing assessments and management."
 )
 
-hint_vasculature_path = "D:/Python/Appendicitis/hint_vasculature.mp3"
+hint_vasculature_path = "hint_vasculature.mp3"
 hint_vasculature_text = (
     "\nRemember to establish vascular access for the patient to ensure the timely administration" 
     "\nof necessary treatments."
 )
 
-lab_path = "D:/Python/Appendicitis/lab.mp3"
+lab_path = "lab.mp3"
 lab_text = (
     "\nTo investigate the patient presenting with suspected appendicitis, it is crucial to perform" 
     "\nbasic laboratory tests including a chemistry profile and a complete blood count to assess" 
@@ -451,25 +451,25 @@ lab_text = (
 
 )
 
-hint_atb_path = "D:/Python/Appendicitis/hint_atb.mp3"
+hint_atb_path = "hint_atb.mp3"
 hint_atb_text = (
     "\nRemember to consider prophylactic antibiotics, especially those covering gram-negative bacteria."
 )
 
-resolution_path = "D:/Python/Appendicitis/resolution.mp3"
+resolution_path = "resolution.mp3"
 resolution_text = (
     "\nBased on the patient's presentation of right lower quadrant tenderness, anorexia, and elevated white blood cell count," 
     "\nthis seems like a classical case of appendicitis and a surgical intervention may be necessary, specifically appendectomy." 
     "\nPrep the patient for the operating room as soon as possible, this is crucial to prevent complications such as perforation and peritonitis."
 )
 
-hint_surgery_path = "D:/Python/Appendicitis/hint_surgery.mp3"
+hint_surgery_path = "hint_surgery.mp3"
 hint_surgery_text = (
     "\nRemember, in cases where surgical intervention may be necessary, it is crucial to" 
     "\ninvolve the appropriate specialty early on for optimal patient care and managment."
 )
 
-outro_path = "D:/Python/Appendicitis/outro.mp3"
+outro_path = "outro.mp3"
 outro_text = (
     "\nThanks to timely medical intervention, he received the treatment he needed." 
     "\nDC has since made a full recovery."
