@@ -116,7 +116,11 @@ DC_6_path = voiced_lines['DC_6']['path']
 DC_6_text = voiced_lines['DC_6']['text']
 
 #interaction_DC
-def ask_question(performed_questions):
+#typewriter_effect(f"Q: {question_text}")
+#typewriter_effect(f"A: {DC_x_text})")
+#Q: Can you descrive the pain?
+#A: The pain is dull and centered on the middle right side of my abdomen.
+def ask_question(performed_questions): 
     questions = {
         "1": "Can you describe the pain?",
         "2": "Have you experienced anything like this before?",
@@ -241,6 +245,11 @@ def interactive_exams():
             break
 
 #interaction_labs
+#colorcoding abnormal labs doesn't work on the full labs=[1,...,50], works with smaller x=[1,...,4]
+#                     Test   Result
+#(variables.json)(70) CRP    42 mg/L (abnromal, in red)
+#(variables.json)(74) EtOH   0 mmol/L (normal, in white)
+#(variables.json)(65) "Troponin_T": ["<", 0.01] - already tuple, because value = "<" 0.01 (missing unit) ... ["<", 0.01, "mmol/L"] - truple?
 def perform_labs(performed_labs):
     labs = [
         {"Arterial Blood Gas": [("pH", variables["pH"], variables["normal_pH"], ""), 
