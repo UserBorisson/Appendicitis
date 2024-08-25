@@ -1,0 +1,79 @@
+{
+    "excellent": {
+      "path": "SFX/excellent.mp3",
+      "text": "\nExcellent!"
+    },
+    "DC_1": {
+      "path": "SFX/DC_1.mp3",
+      "text": "\nThe pain is dull and centered on the middle right side of my abdomen."
+    },
+    "DC_2": {
+      "path": "SFX/DC_2.mp3",
+      "text": "\nNo, this is the first time I've felt anything like this."
+    },
+    "DC_3": {
+      "path": "SFX/DC_3.mp3",
+      "text": "\nYes, I feel nauseous, but I don't have a fever."
+    },
+    "DC_4": {
+      "path": "SFX/DC_4.mp3",
+      "text": "\nI took some over-the-counter painkillers, but they didn’t help."
+    },
+    "DC_5": {
+      "path": "SFX/DC_5.mp3",
+      "text": "\nI’m not very hungry, probably due to the pain. I haven’t had any diarrhoea or vomiting."
+    },
+    "DC_6": {
+      "path": "SFX/DC_6.mp3",
+      "text": "\nNo, I haven't traveled anywhere outside the country recently."
+    },
+    "intro": {
+      "path": "SFX/intro.mp3",
+      "text": "\nDC is a 29 year old man presenting to the emergency room with abdominal pain and nausea, no fever.\nHe says the pain had started yesterday out of nowhere and has been getting worse ever since to\nthe point where it is unbearable."
+    },
+    "history": {
+      "path": "SFX/history.mp3",
+      "text": "\nWhen taking the patient's history, focus on the progression of symptoms, associated factors like\nfever or nausea, and any specific triggers or alleviating factors. During the discussion of\nbody systems, inquire about any recent changes in appetite, bowel habits, urinary symptoms\nand any other relevant systemic complaints."
+    },
+    "differential": {
+      "path": "SFX/differential.mp3",
+      "text": "\nThe patient presents with abdominal pain, poor appetite, nausea and chills.\nThe absence of fever, vomiting, diarrhoea, dysuria and recent travel history\nhelps narrow down the possible differentials. The differential diagnosis\nmay include: ileus, cholecystitis, diverticulitis and appendicitis.\nEach of these conditions presents with distinct features that need\nto be considered based on the patient's symptoms and examination findings."
+    },
+    "physical": {
+      "path": "SFX/physical.mp3",
+      "text": "\nDuring the physical examination, focus on eliciting right lower quadrant tenderness,\nspecifically at McBurney's point, located between the anterior superior iliac spine\nand the umbilicus. Additionally, assess for signs such as Rovsing's sign, psoas sign,\nand obturator sign, which can indicate peritoneal irritation and help in the diagnosis."
+    },
+    "hint_physical": {
+      "path": "SFX/hint_physical.mp3",
+      "text": "\nRemember to thoroughly assess the abdomen for any signs of discomfort or sensitivity,\nas this can provide valuable information about the patient's condition."
+    },
+    "hint_monitoring": {
+      "path": "SFX/hint_monitoring.mp3",
+      "text": "\nMake sure to connect the patient to the necessary equipment to continuously monitor vital signs,\nas this will provide valuable information for ongoing assessments and management."
+    },
+    "hint_vasculature": {
+      "path": "SFX/hint_vasculature.mp3",
+      "text": "\nRemember to establish vascular access for the patient to ensure the timely administration\nof necessary treatments."
+    },
+    "lab": {
+      "path": "SFX/lab.mp3",
+      "text": "\nTo investigate the patient presenting with suspected appendicitis, it is crucial to perform\nbasic laboratory tests including a chemistry profile and a complete blood count to assess\nfor any abnormalities. Additionally, obtaining a CT of the abdomen with contrast is essential\nto confirm the diagnosis and guide further management decisions."
+    },
+    "hint_atb": {
+      "path": "SFX/hint_atb.mp3",
+      "text": "\nRemember to consider prophylactic antibiotics, especially those covering gram-negative bacteria."
+    },
+    "resolution": {
+      "path": "SFX/resolution.mp3",
+      "text": "\nBased on the patient's presentation of right lower quadrant tenderness, anorexia, and elevated white blood cell count,\nthis seems like a classical case of appendicitis and a surgical intervention may be necessary, specifically appendectomy.\nPrep the patient for the operating room as soon as possible, this is crucial to prevent complications such as perforation and peritonitis."
+    },
+    "hint_surgery": {
+      "path": "SFX/hint_surgery.mp3",
+      "text": "\nRemember, in cases where surgical intervention may be necessary, it is crucial to\ninvolve the appropriate specialty early on for optimal patient care and management."
+    },
+    "outro": {
+      "path": "SFX/outro.mp3",
+      "text": "\nThanks to timely medical intervention, the patient received the treatment they needed.\nDC has since made a full recovery."
+    }
+  }
+  
